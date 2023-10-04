@@ -48,7 +48,7 @@ namespace dotnetmicroserviceone.Controllers
         }
 
         [HttpPost]
-        public async Task AddProject(Project pro)
+        public async Task<ActionResult> AddProject(Project pro)
         {
             try
             {
