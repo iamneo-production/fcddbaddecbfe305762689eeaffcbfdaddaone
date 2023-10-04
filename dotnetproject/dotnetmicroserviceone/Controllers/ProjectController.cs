@@ -54,6 +54,7 @@ namespace dotnetmicroserviceone.Controllers
             {
                 _context.projects.Add(pro);
                 await _context.SaveChangesAsync();
+                return Ok();
             }
             catch (System.Exception)
             {
