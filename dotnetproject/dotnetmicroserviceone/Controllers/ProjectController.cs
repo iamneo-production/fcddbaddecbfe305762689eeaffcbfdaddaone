@@ -17,7 +17,7 @@ namespace dotnetmicroserviceone.Controllers
         } 
 
         [HttpGet]
-        public async Task<List<Project>> GetAllAProjects()
+        public async Task<ActionResult<IEnumerable<Project>>> GetAllAProjects()
         {
             try
             {   
@@ -31,7 +31,7 @@ namespace dotnetmicroserviceone.Controllers
         }
 
         [HttpGet("ProjectTitles")]
-        public async Task<List<string>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> Get()
         {
             try
             {
@@ -61,13 +61,13 @@ namespace dotnetmicroserviceone.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteProject(int id)
+        public async Task<IActionResult> DeleteProject(int id)
         {
             try
             {
                 var pro=await _context.projects.Where(u=>u.ProjectID==id).FirstOrDefault();
                 _context.projects.Remove(pro);
-                if(_context.SaveChangesAsync()>0)
+                if(await _context.SaveChangesAsync()>0)
                 {
                     return Ok();
                 }
