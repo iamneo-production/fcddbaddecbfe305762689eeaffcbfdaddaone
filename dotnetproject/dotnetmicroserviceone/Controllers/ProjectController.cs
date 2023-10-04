@@ -46,7 +46,33 @@ namespace dotnetmicroserviceone.Controllers
         }
 
         [HttpPost]
-        
+        public async Task AddProject(Project pro)
+        {
+            try
+            {
+                _context.projects.Add(pro);
+                await _context.SaveChangesAsync();
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteProject(int id)
+        {
+            try
+            {
+                
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
 
     }
 }
