@@ -18,6 +18,70 @@ namespace dotnetmicroservicetwo.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Freelancer>> GetAllFreelancers
+        public async Task<ActionResult<IEnumerable<Freelancer>>> GetAllFreelancers()
+        {
+            try
+            {
+                var freelancers=await _context.freelancer.ToListAsync();
+                return Ok(freelancers);
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Freelancer>> GetFreelancerById(int id)
+        {
+            try
+            {
+                var freelancer=await _context.freelancer.FirstOrDefaultAsync(u=>u.FreelancerID==id);
+                return Ok(freelancer);
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+        [HttpPost]
+        public async Task<ActionResult> AddProject(Freelancer _freelancer)
+        {
+            try
+            {
+                _context.freelancer.Add(_freelancer);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProject(int id)
+        {
+            try
+            {
+                var pro=await _context.freelancer.Where(u=>u.ProjectID==id).FirstOrDefaultAsync();
+                _context.projects.Remove(pro);
+                if(await _context.SaveChangesAsync()>0)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }
