@@ -66,8 +66,8 @@ namespace dotnetmicroservicetwo.Controllers
         {
             try
             {
-                var pro=await _context.freelancer.Where(u=>u.ProjectID==id).FirstOrDefaultAsync();
-                _context.projects.Remove(pro);
+                var pro=await _context.freelancer.Where(u=>u.FreelancerID==id).FirstOrDefaultAsync();
+                _context.freelancer.Remove(pro);
                 if(await _context.SaveChangesAsync()>0)
                 {
                     return Ok();
