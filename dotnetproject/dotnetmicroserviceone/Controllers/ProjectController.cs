@@ -65,7 +65,16 @@ namespace dotnetmicroserviceone.Controllers
         {
             try
             {
-                
+                var pro=await _context.projects.Where(u=>u.ProjectID==id).FirstOrDefault();
+                _context.projects.Remove(pro);
+                if(_context.SaveChangesAsync()>0)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
             catch (System.Exception)
             {
