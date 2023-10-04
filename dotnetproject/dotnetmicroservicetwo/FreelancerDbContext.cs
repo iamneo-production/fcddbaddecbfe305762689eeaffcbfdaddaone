@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameWork.Core
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnetmicroserviceone
 {
@@ -13,6 +13,6 @@ namespace dotnetmicroserviceone
 
         }
 
-        public DbSet<>
+        public DbSet<Freelancer> freelancer{get;set;}
     }
 }
