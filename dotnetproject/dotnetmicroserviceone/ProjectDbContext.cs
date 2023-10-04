@@ -6,8 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dotnetmicroserviceone
 {
-    public class ProjectDbContext
+    public class ProjectDbContext:DbContext
     {
-        
+        public ProjectDbContext(DbContextOptions<ProjectDbContext> options):base(options)
+        {}
+
+        public DbSet<Project> projects{get;set;}
     }
 }
