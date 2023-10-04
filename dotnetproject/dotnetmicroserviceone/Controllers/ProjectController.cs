@@ -16,6 +16,22 @@ namespace dotnetmicroserviceone.Controllers
             _context=context;
         } 
 
-        public async Task<List<>>
+        [HttpGet]
+        public async Task<List<Project>> GetAllAProjects()
+        {
+            try
+            {   
+                return await _context.projects.ToListAsync();
+            }
+            catch(Exception ex)
+            {
+                throw ;
+            }
+            
+        }
+
+        [HttpGet("ProjectTitles")]
+        public async Task<string>
+
     }
 }
