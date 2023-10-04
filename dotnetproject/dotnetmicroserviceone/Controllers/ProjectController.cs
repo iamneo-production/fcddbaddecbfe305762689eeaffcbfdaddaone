@@ -21,7 +21,8 @@ namespace dotnetmicroserviceone.Controllers
         {
             try
             {   
-                return await _context.projects.ToListAsync();
+                var pro=await _context.projects.ToListAsync();
+                return Ok(pro);
             }
             catch(System.Exception)
             {
@@ -35,8 +36,8 @@ namespace dotnetmicroserviceone.Controllers
         {
             try
             {
-                var project=await _context.projects.Select(u=>u.ProjectTitle);
-                return project;
+                var project=await _context.projects.Select(u=>u.ProjectTitle).ToListAsync();
+                return Ok(project);
             }
             catch (System.Exception)
             {
