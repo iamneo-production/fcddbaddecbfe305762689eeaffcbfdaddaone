@@ -1,0 +1,7 @@
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.csproj.AssemblyReference.cache
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.GeneratedMSBuildEditorConfig.editorconfig
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.AssemblyInfoInputs.cache
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.AssemblyInfo.cs
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.csproj.CoreCompileInputs.cache
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.MvcApplicationPartsAssemblyInfo.cs
+/home/coder/project/workspace/dotnetproject/dotnetmicroservicetwo/obj/Debug/net6.0/dotnetmicroservicetwo.MvcApplicationPartsAssemblyInfo.cache
