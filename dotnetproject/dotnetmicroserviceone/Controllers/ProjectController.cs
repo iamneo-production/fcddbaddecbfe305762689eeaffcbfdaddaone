@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace dotnetmicroserviceone.Controllers
 {
@@ -66,7 +67,7 @@ namespace dotnetmicroserviceone.Controllers
         {
             try
             {
-                var pro=await _context.projects.Where(u=>u.ProjectID==id).FirstOrDefault();
+                var pro=await _context.projects.Where(u=>u.ProjectID==id).FirstOrDefaultAsync();
                 _context.projects.Remove(pro);
                 if(await _context.SaveChangesAsync()>0)
                 {
