@@ -23,7 +23,7 @@ namespace dotnetmicroserviceone.Controllers
             {   
                 return await _context.projects.ToListAsync();
             }
-            catch(Exception ex)
+            catch(System.Exception)
             {
                 throw ;
             }
@@ -31,7 +31,22 @@ namespace dotnetmicroserviceone.Controllers
         }
 
         [HttpGet("ProjectTitles")]
-        public async Task<string>
+        public async Task<List<string>> Get()
+        {
+            try
+            {
+                var project=await _context.projects.Select(u=>u.ProjectTitle);
+                return project;
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        [HttpPost]
+        
 
     }
 }
