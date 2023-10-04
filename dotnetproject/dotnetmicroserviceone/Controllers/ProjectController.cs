@@ -63,7 +63,7 @@ namespace dotnetmicroserviceone.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProject(int id)
         {
             try
